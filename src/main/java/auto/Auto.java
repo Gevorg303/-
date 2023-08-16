@@ -1,51 +1,65 @@
 package auto;
-public class Auto {
-    private String brand;
-    private Component body;/*корпус*/
-    private Component engine;/*двигатель*/
-    private Component transmission;/*коробка передач */
 
-    public Auto(String brand, Component body, Component engine, Component transmission) {
+import auto.component.Body;
+import auto.component.Engine;
+import auto.component.Transmission;
+
+public abstract class Auto {
+    private String brand;
+    private String VIN;
+    private Engine engine;
+    private Transmission transmission;
+    private Body body;
+    public Auto(String brand, String VIN, Engine engine, Transmission transmission, Body body) {
         this.brand = brand;
-        this.body = body;
+        this.VIN=VIN;
         this.engine = engine;
         this.transmission = transmission;
+        this.body = body;
     }
 
     @Override
     public String toString() {
-        return "Бренд: "+getBrand()+" Корпус: "+getBody().getName()+" Двигатель: "+getEngine().getName()+" Коробка передач: "+ getTransmission().getName();
+        return "Бренд: "+getBrand()+getBody()+getEngine()+getTransmission();
+    }
+
+    public String getVIN() {
+        return VIN;
     }
 
     public String getBrand() {
         return brand;
     }
 
-    public Component getBody() {
-        return body;
-    }
-
-    public Component getEngine() {
+    public Engine getEngine() {
         return engine;
     }
 
-    public Component getTransmission() {
+    public Transmission getTransmission() {
         return transmission;
+    }
+
+    public Body getBody() {
+        return body;
     }
 
     public void setBrand(String brand) {
         this.brand = brand;
     }
 
-    public void setBody(Component body) {
-        this.body = body;
+    public void setVIN(String VIN) {
+        this.VIN = VIN;
     }
 
-    public void setEngine(Component engine) {
+    public void setEngine(Engine engine) {
         this.engine = engine;
     }
 
-    public void setTransmission(Component transmission) {
+    public void setTransmission(Transmission transmission) {
         this.transmission = transmission;
+    }
+
+    public void setBody(Body body) {
+        this.body = body;
     }
 }

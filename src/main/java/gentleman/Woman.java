@@ -1,27 +1,28 @@
 package gentleman;
 
-public class Woman {
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Woman {
     private String name;
-    private String whim; /*каприз*/
+    private List<Gift> giftList;
 
-    public Woman(String name, String whim) {
+    public Woman(String name) {
         this.name = name;
-        this.whim = whim;
+        this.giftList=new ArrayList<>();
     }
-
     public String getName() {
         return name;
     }
-
-    public String getWhim() {
-        return whim;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setWhim(String whim) {
-        this.whim = whim;
+    public List<Gift> getGiftList() {
+        return giftList;
+    }
+
+    public void setGiftList(List<Gift> giftList) {
+        this.giftList = giftList;
     }
 }

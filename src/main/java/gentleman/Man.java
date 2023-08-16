@@ -6,14 +6,15 @@ public class Man implements ManInterface{
     public Man(String name) {
         this.name = name;
     }
+
     @Override
-    public void giveFlowers(Woman woman) {
-        System.out.println(getName() + " дарит цветы " + woman.getName());
+    public Flowers giveFlowers(Flowers flowers) {
+        return flowers;
     }
 
     @Override
-    public void givingCandy(Woman woman) {
-        System.out.println(getName() + " дарит цветы " + woman.getName());
+    public Candies givingCandy(Candies candies) {
+        return candies;
     }
 
     public String getName() {
