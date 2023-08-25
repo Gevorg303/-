@@ -1,18 +1,14 @@
 package auto;
 
-import auto.component.Body;
-import auto.component.Engine;
-import auto.component.Transmission;
+import auto.component.*;
 
 public abstract class Auto {
     private String brand;
-    private String VIN;
     private Engine engine;
     private Transmission transmission;
     private Body body;
-    public Auto(String brand, String VIN, Engine engine, Transmission transmission, Body body) {
+    public Auto(String brand, Engine engine, Transmission transmission, Body body) {
         this.brand = brand;
-        this.VIN=VIN;
         this.engine = engine;
         this.transmission = transmission;
         this.body = body;
@@ -21,10 +17,6 @@ public abstract class Auto {
     @Override
     public String toString() {
         return "Бренд: "+getBrand()+getBody()+getEngine()+getTransmission();
-    }
-
-    public String getVIN() {
-        return VIN;
     }
 
     public String getBrand() {
@@ -45,10 +37,6 @@ public abstract class Auto {
 
     public void setBrand(String brand) {
         this.brand = brand;
-    }
-
-    public void setVIN(String VIN) {
-        this.VIN = VIN;
     }
 
     public void setEngine(Engine engine) {

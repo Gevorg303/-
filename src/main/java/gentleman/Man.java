@@ -1,6 +1,6 @@
 package gentleman;
 
-public class Man implements ManInterface{
+public class Man implements FlowersInterface, CandiesInterface{
     private String name;
 
     public Man(String name) {

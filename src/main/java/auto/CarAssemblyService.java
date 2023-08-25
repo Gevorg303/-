@@ -1,26 +1,18 @@
 package auto;
 
-import auto.component.Body;
-import auto.component.Engine;
-import auto.component.Transmission;
+import auto.component.*;
 
 import java.util.Objects;
 
 public class CarAssemblyService implements InterfaceAutoAssemblyService{
 
     @Override
-    public BMW assemblingBMW(String brand, String VIN, Engine engine, Transmission transmission, Body body) {
-        if(Objects.equals(brand, "BMW") && Objects.equals(VIN, engine.getVIN()) && Objects.equals(VIN, transmission.getVIN()) && Objects.equals(VIN, body.getVIN())){
-            return new BMW(brand, VIN, engine, transmission, body);
-        }
-        return null;
+    public BMW assemblingBMW(String brand, EngineBMW engine, TransmissionBMW transmission, BodyBMW body) {
+        return new BMW(brand, engine, transmission, body);
     }
 
     @Override
-    public Mercedes assemblingMercedes(String brand, String VIN, Engine engine, Transmission transmission, Body body) {
-        if(Objects.equals(brand, "Mercedes") && Objects.equals(VIN, engine.getVIN()) && Objects.equals(VIN, transmission.getVIN()) && Objects.equals(VIN, body.getVIN())) {
-            return new Mercedes(brand, VIN, engine, transmission, body);
-        }
-        return null;
+    public Mercedes assemblingMercedes(String brand, EngineMercedes engine, TransmissionMercedes transmission, BodyMercedes body) {
+        return new Mercedes(brand, engine, transmission, body);
     }
 }

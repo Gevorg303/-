@@ -1,9 +1,7 @@
 import auto.BMW;
 import auto.CarAssemblyService;
 import auto.Mercedes;
-import auto.component.Body;
-import auto.component.Engine;
-import auto.component.Transmission;
+import auto.component.*;
 import bank.CurrencyConverter;
 import bank.DollarBankAccount;
 import bank.RubleBankAccount;
@@ -14,10 +12,10 @@ public class Main {
         System.out.println("---------------Машинка--------------");
         CarAssemblyService carAssemblyService = new CarAssemblyService();
 
-        BMW bmw=carAssemblyService.assemblingBMW("BMW","123", new Engine("123",  2.5),
-                new Transmission("123","Механическая"),new Body("123", "Черный"));
-        Mercedes mercedes =carAssemblyService.assemblingMercedes("Mercedes","543", new Engine("543",  3.0),
-                new Transmission("543","Автоматическая"),new Body("543", "Желтый"));
+        BMW bmw=carAssemblyService.assemblingBMW("BMW", new EngineBMW(2.5),
+                new TransmissionBMW("Механическая"),new BodyBMW("Черный"));
+        Mercedes mercedes =carAssemblyService.assemblingMercedes("Mercedes", new EngineMercedes(3.0),
+                new TransmissionMercedes("Автоматическая"),new BodyMercedes("Желтый"));
 
         System.out.println(bmw);
         System.out.println(mercedes);

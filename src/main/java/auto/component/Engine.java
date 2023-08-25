@@ -1,24 +1,14 @@
 package auto.component;
 
-public class Engine {
-    private String VIN;
+public abstract class Engine {
     private double engineCapacity;/*объем двигателя*/
 
-    public Engine(String VIN, double engineCapacity) {
-        this.VIN = VIN;
+    public Engine(double engineCapacity) {
         this.engineCapacity = engineCapacity;
     }
     @Override
     public String toString() {
         return " Объем двигателя: "+getEngineCapacity();
-    }
-
-    public String getVIN() {
-        return VIN;
-    }
-
-    public void setVIN(String VIN) {
-        this.VIN = VIN;
     }
 
     public double getEngineCapacity() {

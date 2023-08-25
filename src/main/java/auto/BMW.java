@@ -1,11 +1,11 @@
 package auto;
 
-import auto.component.Body;
-import auto.component.Engine;
-import auto.component.Transmission;
+import auto.component.BodyBMW;
+import auto.component.EngineBMW;
+import auto.component.TransmissionBMW;
 
 public class BMW extends Auto{
-    public BMW(String brand, String VIN, Engine engine, Transmission transmission, Body body) {
-        super(brand, VIN, engine, transmission, body);
+    public BMW(String brand, EngineBMW engine, TransmissionBMW transmission, BodyBMW body) {
+        super(brand, engine, transmission, body);
     }
 }

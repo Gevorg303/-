@@ -1,11 +1,9 @@
 package auto.component;
 
-public class Transmission {
-    private String VIN;
+public abstract class Transmission {
     private String transmissionSystem;
 
-    public Transmission(String VIN, String transmissionSystem) {
-        this.VIN = VIN;
+    public Transmission(String transmissionSystem) {
         this.transmissionSystem = transmissionSystem;
     }
 
@@ -13,14 +11,6 @@ public class Transmission {
     public String toString() {
         return " Трансмиссия: " + transmissionSystem;
 
-    }
-
-    public String getVIN() {
-        return VIN;
-    }
-
-    public void setVIN(String VIN) {
-        this.VIN = VIN;
     }
 
     public String getTransmissionSystem() {
