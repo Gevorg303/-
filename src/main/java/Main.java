@@ -40,14 +40,14 @@ public class Main {
         Candies candies = new Candies(1000);
         Flowers flowers = new Flowers(12000);
 
-        Man petya = new Man("Петя");
-        Natasha natasha = new Natasha("Наташа");
-        Katya katya = new Katya("Катя");
+        Man petya = new Man("Петя",candies, flowers);
+        WomanCandy womanCandy = new WomanCandy("Наташа");
+        WomanFlowers womanFlowers = new WomanFlowers("Катя");
 
-        natasha.takeCandies(petya.givingCandy(candies));
-        katya.takeFlowers(petya.giveFlowers(flowers));
+        petya.givingCandy(womanCandy);
+        petya.giveFlowers(womanFlowers);
 
-        System.out.println(natasha);
-        System.out.println(katya);
+        System.out.println(womanCandy);
+        System.out.println(womanFlowers);
     }
 }

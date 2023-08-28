@@ -1,10 +1,8 @@
 package gentleman;
 
-import java.util.List;
+public class WomanFlowers extends Woman{
 
-public class Katya extends Woman{
-
-    public Katya(String name) {
+    public WomanFlowers(String name) {
         super(name);
     }
     public void takeFlowers(Flowers flowers){

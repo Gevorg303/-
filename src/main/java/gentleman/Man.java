@@ -2,19 +2,39 @@ package gentleman;
 
 public class Man implements FlowersInterface, CandiesInterface{
     private String name;
+    private Candies candies;
+    private Flowers flowers;
 
-    public Man(String name) {
+    public Man(String name, Candies candies, Flowers flowers) {
         this.name = name;
+        this.candies = candies;
+        this.flowers = flowers;
     }
 
     @Override
-    public Flowers giveFlowers(Flowers flowers) {
-        return flowers;
+    public void giveFlowers(WomanFlowers womanFlowers) {
+        womanFlowers.takeFlowers(getFlowers());
     }
 
     @Override
-    public Candies givingCandy(Candies candies) {
+    public void givingCandy(WomanCandy womanCandy) {
+        womanCandy.takeCandies(getCandies());
+    }
+
+    public Candies getCandies() {
         return candies;
+    }
+
+    public void setCandies(Candies candies) {
+        this.candies = candies;
+    }
+
+    public void setFlowers(Flowers flowers) {
+        this.flowers = flowers;
+    }
+
+    public Flowers getFlowers() {
+        return flowers;
     }
 
     public String getName() {

@@ -1,5 +1,5 @@
 package gentleman;
 
 public interface FlowersInterface {
-    Flowers giveFlowers(Flowers flowers);
+    void giveFlowers(WomanFlowers womanFlowers);
 }
